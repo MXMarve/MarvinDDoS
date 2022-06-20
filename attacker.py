@@ -51,7 +51,7 @@ if __name__ == "__main__":
             try:
                 sock = setupSocket(ip)
                 if sock:
-                    print(Fore.YELLOW+"HIT!"+Fore.WHITE)
+                    print(Fore.RED+"HIT!"+Fore.WHITE)
                     sockets.append(sock)
             except socket.error:
                 break
