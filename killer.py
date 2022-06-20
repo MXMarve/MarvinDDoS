@@ -1,23 +1,4 @@
 import os
-import threading
-def install():
-    os.system("sudo apt install python3.9 1>/dev/null")
-    os.system("curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 1>/dev/null")
-    os.system("python3.9 get-pip.py 1>/dev/null")
-    os.system("sudo rm get-pip.py 1>/dev/null")
-
-if __name__ == "__main__":
-  t1 = threading.Thread(target=install)
-
-try:
-    os.system("python3.9 --version 1>/dev/null")
-except:
-    t1.start() 
-    print("Installing Requirements...")
-    t1.join()
-    input("Install Complete. Press Enter to Restart Program to Continue")
-    time.sleep(1)
-    exit()
 
 # -------------------------------------------- 
 
@@ -46,6 +27,7 @@ import time
 import colorama
 from colorama import Fore
 os.system("clear")
+time.sleep(1)
 logo = """
   ███╗   ███╗ █████╗ ██████╗ ██╗   ██╗██╗███╗   ██╗
   ████╗ ████║██╔══██╗██╔══██╗██║   ██║██║████╗  ██║
