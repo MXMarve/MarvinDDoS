@@ -6,9 +6,11 @@ Install:
 ```
 sudo apt install git
 ```
+
 ```
 git clone https://github.com/MXMarve/MarvinDDoS.git
 ```
+
 ```
 cd MarvinDDoS
 ```
@@ -16,9 +18,11 @@ To Run:
 ```
 cd DDoSUtility
 ```
+
 ```
 python3.9 killer.py
 ```
+
 Url -> Target you want to hit
 
 Multiplier -> You can go from 1-50x strength
