@@ -1,8 +1,8 @@
 #!/bin/sh
-sudo apt install python3.9 > nul
+sudo apt install python3.9 > /dev/null
 echo Updating...
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py > nul
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py > /dev/null
 echo Updating Dependencies...
-python3.9 get-pip.py > nul
+python3.9 get-pip.py > /dev/null
 echo Starting...
 python3.9 killer.py
