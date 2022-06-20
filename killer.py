@@ -35,7 +35,7 @@ from signal import signal, SIGINT
 from sys import exit
 class ctrlc:
   def handler(signal_received, frame):
-      print('Exiting...')
+      print('  Exiting...')
       time.sleep(1)
       os.system("clear")
       exit(0)
