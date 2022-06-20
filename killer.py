@@ -1,5 +1,5 @@
 import os
-
+import threading
 def install():
     os.system("sudo apt install python3.9 > nul")
     os.system("curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py > nul")
