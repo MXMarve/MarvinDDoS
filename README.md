@@ -23,6 +23,9 @@ Url -> Target you want to hit
 
 Multiplier -> You can go from 1-50x strength
 
+Make sure to give it 5 minutes for everything to propagate on the target and it will die!
+
+
 ONLY FOR EDUCATIONAL PURPOSES ONLY
 
 BY USING THIS PROGRAM YOU AGREE THATI AM NOT HELD LIABLE FOR ANYTHING YOUDO WITH THIS PROGRAM. YOU MAY UPLOAD
