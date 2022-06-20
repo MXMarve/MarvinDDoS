@@ -43,8 +43,6 @@ class ctrlc:
 
   if __name__ == '__main__':
       signal(SIGINT, handler)
-      while True:
-          pass
 
 os.system("clear")
 time.sleep(1)
@@ -135,8 +133,6 @@ if __name__ == "__main__":
   t49 = threading.Thread(target=attack)
   t50 = threading.Thread(target=attack)
   t51 = threading.Thread(target=ctrlc)
-  t51.start()
-  t51.join()
 if count == "1":
   t1.start()
 if count == "2":
