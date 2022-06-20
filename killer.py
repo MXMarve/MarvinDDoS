@@ -17,15 +17,43 @@ except:
 try:
   import time
 except:
-  print("Installing Dependency: Threading")
-  os.system("pip3.9 install Threading 1>/dev/null")
+  print("Installing Dependency: Signal")
+  os.system("pip3.9 install signal 1>/dev/null")
+
+try:
+  import time
+except:
+  print("Installing Dependency: Readchar")
+  os.system("pip3.9 install readchar 1>/dev/null")
 
 # --------------------------------------------
-
 import threading
 import time
 import colorama
 from colorama import Fore
+import signal
+import readchar
+ 
+def handler(signum, frame):
+    msg = "Ctrl-c was pressed. Do you really want to exit? y/n "
+    print(msg, end="", flush=True)
+    res = readchar.readchar()
+    if res == 'y':
+        print("")
+        exit(1)
+    else:
+        print("", end="\r", flush=True)
+        print(" " * len(msg), end="", flush=True) # clear the printed line
+        print("    ", end="\r", flush=True)
+ 
+ 
+signal.signal(signal.SIGINT, handler)
+ 
+count = 0
+while True:
+    print(f"{count}", end="\r", flush=True)
+    count += 1
+    time.sleep(0.1)
 os.system("clear")
 time.sleep(1)
 logo = """
