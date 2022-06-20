@@ -14,13 +14,19 @@ git clone https://github.com/MXMarve/MarvinDDoS.git
 ```
 cd MarvinDDoS
 ```
+
+```
+python3 installer.py
+```
+^ Installs Requirements and Dependencies ^
+
 To Run: 
 ```
-cd DDoSUtility
+cd MarvinDDoS
 ```
 
 ```
-python3.9 killer.py
+sudo bash run.sh
 ```
 
 Url -> Target you want to hit
