@@ -33,12 +33,15 @@ import colorama
 from colorama import Fore
 from signal import signal, SIGINT
 from sys import exit
+class ctrlc:
+  def handler(signal_received, frame):
+      print('Exiting...')
+      time.sleep(1)
+      os.system("clear")
+      exit(0)
 
-def handler(signal_received, frame):
-    print('  Exiting...')
-    time.sleep(1)
-    os.system("clear")
-    exit(0)
+  if __name__ == '__main__':
+      signal(SIGINT, handler)
 
 os.system("clear")
 time.sleep(1)
@@ -78,7 +81,6 @@ if yesno == "N":
   exit()
 
 if __name__ == "__main__":
-  signal(SIGINT, handler)
   t1 = threading.Thread(target=attack)
   t2 = threading.Thread(target=attack)
   t3 = threading.Thread(target=attack)
@@ -129,6 +131,7 @@ if __name__ == "__main__":
   t48 = threading.Thread(target=attack)
   t49 = threading.Thread(target=attack)
   t50 = threading.Thread(target=attack)
+  t51 = threading.Thread(target=ctrlc)
 if count == "1":
   t1.start()
 if count == "2":
