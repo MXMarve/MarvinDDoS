@@ -16,16 +16,6 @@ cd MarvinDDoS
 ```
 
 ```
-python3 installer.py
-```
-^ Installs Requirements and Dependencies ^
-
-To Run: 
-```
-cd MarvinDDoS
-```
-
-```
 sudo bash run.sh
 ```
 
