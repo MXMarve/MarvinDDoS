@@ -19,12 +19,9 @@ cd DDoSUtility
 ```
 python3.9 killer.py
 ```
-It will ask for IP/URL
+Url -> Target you want to hit
 
-Enter what you want to hit
-
-It will ask for the amount of times you want to hit withthe program (1 ones the program once, 3 runs the program
-3 times, multiplying the strength by 3) You can go from 1-50x strength
+Multiplier -> You can go from 1-50x strength
 
 ONLY FOR EDUCATIONAL PURPOSES ONLY
 
